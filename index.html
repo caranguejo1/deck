@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .deck-container, .hand-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .card {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Truco</h1>
+        <h3 class="mt-4">Cartas no Baralho <span id="deckIdContainer"></span></h3>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <button class="btn btn-success" onclick="novoBaralho()">Novo Baralho</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-secondary" onclick="embaralharCartas()">Embaralhar</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-dark" onclick="listarBaralhos()">Listar Baralhos</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-danger" onclick="resetarSite()">Resetar Website</button>
+            </div>
+            <hr>
+            <div class="col-md-3 mt-3">
+                <button class="btn btn-info" onclick="listarLogs()">Logs API</button>
+            </div>
+        </div>
+        <hr>
+        <div id="deckTableContainer" class="decks-table-container"></div>
+        <div id="deckContainer" class="deck-container"></div>
+        <h3 class="mt-4">Cartas na Mão do Jogador</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" id="deckName" class="form-control" placeholder="Nome do Baralho">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-success" onclick="salvarBaralho()">Salvar Baralho</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary" onclick="comprarCincoCartas()">Comprar 5 Cartas</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-danger" onclick="deletarBaralho()">Deletar Baralho</button>
+            </div>
+        </div>
+        <hr>
+        <div id="handContainer" class="hand-container"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
